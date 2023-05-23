@@ -3,11 +3,16 @@ const app = express();//assign express function to app
 
 //endpoints
 app.get("/", (req, res) => {
-  res.send("Welcome to KinoMart server..");
+  res.status(200).send({
+    message: "Welcome to KinoMart server."
+  });
 });
 
+//endpoints for products
 app.get("/products", (req, res) => {
-  res.send("products are sent")
+  res.status(200).send({
+    message: "products are sent."
+  });
 });
 
 app.listen(3001, () => {
