@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 //endpoints for products
 app.get("/products", (req, res) => {
   res.status(200).send({
-    message: "products are sent."
+    message: "Products are sent."
   });
 });
 
