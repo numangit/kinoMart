@@ -6,6 +6,10 @@ app.get("/", (req, res) => {
   res.send("Welcome to KinoMart server..");
 });
 
+app.get("/products", (req, res) => {
+  res.send("products are sent")
+});
+
 app.listen(3001, () => {
   console.log("KinoMart server is running at http://localhost:3001");
 });
