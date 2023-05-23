@@ -1,5 +1,9 @@
-const express = require("express");//get express function from express package
+const express = require("express");//import express function from express package
+const morgan = require("morgan");//import morgan from the package
 const app = express();//assign express function to app
+
+//middle wares
+app.use(morgan('dev'));
 
 //endpoints
 app.get("/", (req, res) => {
