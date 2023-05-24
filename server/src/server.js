@@ -12,6 +12,13 @@ app.get("/", (req, res) => {
   });
 });
 
+//test endpoint
+app.get("/test", (req, res) => {
+  res.status(200).send({
+    message: "Server is working."
+  })
+})
+
 //endpoints for products
 app.get("/products", (req, res) => {
   res.status(200).send({
