@@ -1,3 +1,5 @@
+//*This file have code that uses app.
+
 const express = require("express");//import express function from express package
 const morgan = require("morgan");//import morgan from the package
 const app = express();//assign express function to app
