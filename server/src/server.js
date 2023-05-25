@@ -4,7 +4,8 @@ const app = express();//assign express function to app
 
 // middleware
 app.use(morgan('dev'));
-app.use(express.json()); //express build-in middleware to use json in req body
+app.use(express.json()); //express built-in middleware to use json in req body
+app.use(express.urlencoded({ extend: true })); //express built-in middleware to work with form related data in req body
 
 //custom middleware
 const isLoggedIn = (req, res, next) => {
