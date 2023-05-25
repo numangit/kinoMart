@@ -14,6 +14,7 @@ const isLoggedIn = (req, res, next) => {
     return res.status(401).json({ message: 'Please log in.' });
   }
 };
+app.use(isLoggedIn)//this will apply the middleware to every endpoint
 
 //endpoints
 app.get("/", (req, res) => {
@@ -30,7 +31,7 @@ app.get("/test", (req, res) => {
 });
 
 //endpoints for user profile
-app.get("/api/user", isLoggedIn, (req, res) => {
+app.get("/api/user", (req, res) => {
   res.status(200).send({
     message: "User profile is returned."
   });
