@@ -19,10 +19,10 @@ app.get("/test", (req, res) => {
   })
 })
 
-//endpoints for products
-app.get("/products", (req, res) => {
+//endpoints for user profile
+app.get("/api/user", (req, res) => {
   res.status(200).send({
-    message: "Products are sent."
+    message: "User profile is returned."
   });
 });
 
