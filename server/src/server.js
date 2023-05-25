@@ -8,6 +8,7 @@ app.use(morgan('dev'));
 //custom middleware
 const isLoggedIn = (req, res, next) => {
   console.log("logged in middleware");
+  next();
 };
 
 //endpoints
