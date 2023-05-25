@@ -44,6 +44,12 @@ app.use((req, res, next) => {
   res.status(404).json({ message: "Route not found." });
 });
 
+//server error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broken!');
+});
+
 app.listen(3001, () => {
   console.log("KinoMart server is running at http://localhost:3001");
 });
