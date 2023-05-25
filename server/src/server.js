@@ -7,8 +7,12 @@ app.use(morgan('dev'));
 
 //custom middleware
 const isLoggedIn = (req, res, next) => {
-  console.log("logged in middleware");
-  next();
+  const logged = true;
+  if (logged) {
+    next();
+  } else {
+    return res.status(401).json({ message: 'Please log in.' });
+  }
 };
 
 //endpoints
