@@ -2,8 +2,13 @@ const express = require("express");//import express function from express packag
 const morgan = require("morgan");//import morgan from the package
 const app = express();//assign express function to app
 
-//middle wares
+// middleware
 app.use(morgan('dev'));
+
+//custom middleware
+const isLoggedIn = (req, res, next) => {
+  console.log("logged in middleware");
+};
 
 //endpoints
 app.get("/", (req, res) => {
@@ -16,8 +21,8 @@ app.get("/", (req, res) => {
 app.get("/test", (req, res) => {
   res.status(200).send({
     message: "Server is working."
-  })
-})
+  });
+});
 
 //endpoints for user profile
 app.get("/api/user", (req, res) => {
