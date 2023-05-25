@@ -3,7 +3,7 @@ const morgan = require("morgan");//import morgan from the package
 const app = express();//assign express function to app
 
 // middleware
-app.use(morgan('dev'));
+app.use(morgan('dev')); //"app.use()" from express, it applies the middleware to every endpoint
 app.use(express.json()); //express built-in middleware to use json in req body (parses incoming requests with JSON payloads.)
 app.use(express.urlencoded({ extend: true })); //express built-in middleware to work with form related data in req body(parses incoming requests with URL-encoded payloads.)
 
@@ -16,7 +16,7 @@ const isLoggedIn = (req, res, next) => {
     return res.status(401).json({ message: 'Please log in.' });
   }
 };
-app.use(isLoggedIn)//this will apply the middleware to every endpoint
+app.use(isLoggedIn)
 
 //endpoints
 app.get("/", (req, res) => {
@@ -37,6 +37,11 @@ app.get("/api/user", (req, res) => {
   res.status(200).send({
     message: "User profile is returned."
   });
+});
+
+//client error handling middleware
+app.use((req, res, next) => {
+  res.status(404).json({ message: "Route not found." });
 });
 
 app.listen(3001, () => {
