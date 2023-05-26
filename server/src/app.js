@@ -33,18 +33,15 @@ app.get("/api/user", (req, res) => {
 
 //client error handling middleware
 app.use((req, res, next) => {
-  createErrors(404, "Route not found.");
-  next();
+  next(createErrors(404, "Route not found."));
 });
 
-//server error handling middleware
+//server error handling middleware -> all the errors will come here
 app.use((err, req, res, next) => {
   return res.status(err.status || 500).json({
     success: false,
     message: err.message
   });
-  console.error(err.stack);
-  res.status(500).send('Something broken!');
 });
 
 module.exports = app;
