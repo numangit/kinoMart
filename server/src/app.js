@@ -2,6 +2,7 @@
 
 const express = require("express");//import express function from express package
 const morgan = require("morgan");//import morgan from the package
+const createErrors = require("http-errors");
 const app = express();//assign express function to app
 
 // middleware
@@ -32,7 +33,8 @@ app.get("/api/user", (req, res) => {
 
 //client error handling middleware
 app.use((req, res, next) => {
-  res.status(404).json({ message: "Route not found." });
+  createErrors(404, "Route not found.");
+  next();
 });
 
 //server error handling middleware
