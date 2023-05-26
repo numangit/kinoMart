@@ -36,7 +36,7 @@ app.use((req, res, next) => {
   next(createErrors(404, "Route not found."));
 });
 
-//server error handling middleware -> all the errors will come here
+//server error handling middleware -> all the endpoint errors will come here
 app.use((err, req, res, next) => {
   return res.status(err.status || 500).json({
     success: false,
