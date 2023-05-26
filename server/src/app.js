@@ -39,6 +39,10 @@ app.use((req, res, next) => {
 
 //server error handling middleware
 app.use((err, req, res, next) => {
+  return res.status(err.status || 500).json({
+    success: false,
+    message: err.message
+  });
   console.error(err.stack);
   res.status(500).send('Something broken!');
 });
