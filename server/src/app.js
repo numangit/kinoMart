@@ -4,8 +4,16 @@ const express = require('express');//import express function from express packag
 const morgan = require('morgan');//import morgan from the package
 const createErrors = require('http-errors');
 const xssClean = require('xss-clean');
+const rateLimit = require('express-rate-limit');
 
 const app = express();//assign express function to app
+
+// api limit
+const rateLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000, //1 minute
+  max: 5, //limit
+  message: "Too many request from this IP, please try again later."
+});
 
 // middleware
 app.use(xssClean());
