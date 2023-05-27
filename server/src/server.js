@@ -1,9 +1,7 @@
 //this file have code to run the server
-require('dotenv').config();
 const app = require("./app");
+const { serverPort } = require('./secret');
 
-const port = process.env.SERVER_PORT || 3002;
-
-app.listen(port, () => {
-  console.log(`KinoMart server is running at http://localhost:${port}`);
+app.listen(serverPort, () => {
+  console.log(`KinoMart server is running at http://localhost:${serverPort}`);
 });
