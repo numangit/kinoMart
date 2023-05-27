@@ -16,6 +16,7 @@ const rateLimiter = rateLimit({
 });
 
 // middleware
+app.use(rateLimiter); //limit for all api calls
 app.use(xssClean());
 app.use(morgan('dev')); //"app.use()" from express, it applies the middleware to every endpoint
 app.use(express.json()); //express built-in middleware to use json in req body (parses incoming requests with JSON payloads.)
@@ -29,7 +30,7 @@ app.get("/", (req, res) => {
 });
 
 //test endpoint
-app.get("/test", rateLimiter, (req, res) => {
+app.get("/test", (req, res) => {
   res.status(200).send({
     message: "Server is working."
   });
