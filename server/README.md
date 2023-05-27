@@ -4,6 +4,12 @@ Kinomart is a full-stack E-commerce website.
 ## Live Server link
 Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/)
 
+## Server Features
+
+* error handling
+* limit to API call rate
+* MVC Architecture
+
 ## Packages used in the server
 
 * express
