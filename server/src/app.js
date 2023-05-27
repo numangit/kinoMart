@@ -8,7 +8,7 @@ const rateLimit = require('express-rate-limit');
 
 const app = express();//assign express function to app
 
-// api limit
+// api limit middleware
 const rateLimiter = rateLimit({
   windowMs: 1 * 60 * 1000, //1 minute
   max: 5, //limit
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 //test endpoint
-app.get("/test", (req, res) => {
+app.get("/test", rateLimiter, (req, res) => {
   res.status(200).send({
     message: "Server is working."
   });
