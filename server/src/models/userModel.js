@@ -37,6 +37,10 @@ const userSchema = new Schema({
     type: 'string',
     required: [true, 'user address is required']
   },
+  phone: {
+    type: 'number',
+    required: [true, 'user phone number is required']
+  },
 });
 
 module.exports = userSchema;
