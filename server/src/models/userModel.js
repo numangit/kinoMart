@@ -44,6 +44,10 @@ const userSchema = new Schema({
   isAdmin: {
     type: boolean,
     default: false
+  },
+  isBanned: {
+    type: boolean,
+    default: false
   }
 });
 
