@@ -1,8 +1,13 @@
-//dummy data
-const users = [
-  { id: 1, name: "Numan" },
-  { id: 2, name: "Oban" },
-  { id: 3, name: "Hassan" },
-];
+const { Schema, model } = require('mongoose');
 
-module.exports = users;
+const userSchema = new Schema({
+  name: {
+    type: string,
+    required: [true, 'username is required'],
+    trim: true,
+    minlength: [2, 'username must be minimum 2 characters'],
+    maxlength: [50, 'username must be maximum 50 characters']
+  }
+});
+
+module.exports = userSchema;
