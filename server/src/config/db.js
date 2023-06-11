@@ -5,10 +5,10 @@ const connectDB = async (options = {}) => {
   try {
     //connect bd using mongoose
     await mongoose.connect(mongodbURL, options);
-    console.log('DB connection successful');
+    console.log('DB connected successfully');
 
     //error handling using mongoose
-    mongoose.connect.on('error', (error) => {
+    mongoose.connection.on('error', (error) => {
       console.log('DB connection error:', error);
     });
 

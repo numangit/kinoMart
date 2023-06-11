@@ -21,7 +21,7 @@ app.use(rateLimiter); //limit for all api calls
 app.use(xssClean());
 app.use(morgan('dev')); //"app.use()" from express, it applies the middleware to every endpoint
 app.use(express.json()); //express built-in middleware to use json in req body (parses incoming requests with JSON payloads.)
-app.use(express.urlencoded({ extend: true })); //express built-in middleware to work with form related data in req body(parses incoming requests with URL-encoded payloads.)
+app.use(express.urlencoded({ extended: true })); //express built-in middleware to work with form related data in req body(parses incoming requests with URL-encoded payloads.)
 
 //using/linking api routers
 app.use("/api/users", userRouter);
