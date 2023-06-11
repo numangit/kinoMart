@@ -49,6 +49,6 @@ const userSchema = new Schema({
     type: boolean,
     default: false
   }
-});
+}, { timestamps: true }); //timestamp tells us when a data is created and updated
 
 module.exports = userSchema;
