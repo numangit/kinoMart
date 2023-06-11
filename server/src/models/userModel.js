@@ -52,3 +52,7 @@ const userSchema = new Schema({
     default: false
   }
 }, { timestamps: true }); //timestamp tells us when a data is created and updated
+
+const User = model('Users', userSchema);
+
+module.exports = User;
