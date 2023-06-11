@@ -8,7 +8,7 @@ Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/)
 
 * error handling
 * limit to API call rate
-*  Model-View-Controller (MVC) Architecture
+* Model-View-Controller (MVC) Architecture
 
 ## Packages used in the server
 
