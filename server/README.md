@@ -10,7 +10,7 @@ Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/)
 * limit to API call rate
 * Model-View-Controller (MVC) Architecture
 * Schema and Models
-* Schema Validation
+* Schema Validation, password encryption
 
 ## Packages used in the server
 
@@ -19,6 +19,7 @@ Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/)
 * to sanitize user input  -> xss-clean
 * to set limit to API calls -> express-rate-limit
 * mongoose -> to connect with mongodb
+* becrypt -> to encrypt and decrypt passwords
 
 ## devDependencies packages
 
