@@ -9,7 +9,7 @@ const users = [
 ];
 
 //users endpoint
-userRouter.get('/api/users', (req, res) => {
+userRouter.get('/', (req, res) => {
   res.status(200).send({
     message: "Users data has been sent",
     users: users

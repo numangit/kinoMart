@@ -24,7 +24,7 @@ app.use(express.json()); //express built-in middleware to use json in req body (
 app.use(express.urlencoded({ extend: true })); //express built-in middleware to work with form related data in req body(parses incoming requests with URL-encoded payloads.)
 
 //using/linking api routers
-app.use(userRouter);
+app.use("/api/users", userRouter);
 
 //endpoints
 app.get("/", (req, res) => {
@@ -37,13 +37,6 @@ app.get("/", (req, res) => {
 app.get("/test", (req, res) => {
   res.status(200).send({
     message: "Server is working."
-  });
-});
-
-//endpoints for user profile
-app.get("/api/user", (req, res) => {
-  res.status(200).send({
-    message: "User profile is returned."
   });
 });
 
