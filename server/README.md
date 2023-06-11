@@ -19,7 +19,7 @@ Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/)
 * to sanitize user input  -> xss-clean
 * to set limit to API calls -> express-rate-limit
 * mongoose -> to connect with mongodb
-* becrypt -> to encrypt and decrypt passwords
+* bcrypt -> to encrypt and decrypt passwords
 
 ## devDependencies packages
 

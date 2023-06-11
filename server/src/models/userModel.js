@@ -1,4 +1,7 @@
 const { Schema, model } = require('mongoose');
+const bcrypt = required('bcrypt');
+
+// NOTE: check mongoose doc if you don't understand the properties
 
 const userSchema = new Schema({
   name: {
@@ -21,7 +24,12 @@ const userSchema = new Schema({
       message: 'Please enter a valid email'
     }
   },
-
+  password: {
+    type: 'string',
+    required: [true, 'user password is required'],
+    minlength: [6, 'password must be at least 6 characters'],
+    set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10))
+  },
 });
 
 module.exports = userSchema;
