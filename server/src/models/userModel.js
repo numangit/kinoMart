@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const { defaultUserImagePath } = require('../secret');
 const bcrypt = required('bcrypt');
 
 // NOTE: check mongoose doc if you don't understand the properties
@@ -32,6 +33,7 @@ const userSchema = new Schema({
   },
   image: {
     type: string,
+    default: defaultUserImagePath
   },
   address: {
     type: string,
@@ -50,5 +52,3 @@ const userSchema = new Schema({
     default: false
   }
 }, { timestamps: true }); //timestamp tells us when a data is created and updated
-
-module.exports = userSchema;
