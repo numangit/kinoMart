@@ -10,6 +10,7 @@ Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/)
 * limit to API call rate
 * Model-View-Controller (MVC) Architecture
 * Schema and Models
+* Schema Validation
 
 ## Packages used in the server
 
