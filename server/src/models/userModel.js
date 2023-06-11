@@ -25,22 +25,26 @@ const userSchema = new Schema({
     }
   },
   password: {
-    type: 'string',
+    type: string,
     required: [true, 'user password is required'],
     minlength: [6, 'password must be at least 6 characters'],
     set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)) //bcrypt function to encrypt password
   },
   image: {
-    type: 'string',
+    type: string,
   },
   address: {
-    type: 'string',
+    type: string,
     required: [true, 'user address is required']
   },
   phone: {
-    type: 'number',
+    type: string,
     required: [true, 'user phone number is required']
   },
+  isAdmin: {
+    type: boolean,
+    default: false
+  }
 });
 
 module.exports = userSchema;
