@@ -16,6 +16,7 @@ Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/)
 * error handling -> http-errors
 * to sanitize user input  -> xss-clean
 * to set limit to API calls -> express-rate-limit
+* mongoose -> to connect with mongodb
 
 ## devDependencies packages
 
