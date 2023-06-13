@@ -37,6 +37,7 @@ const getUsers = async (req, res, next) => {
       pagination: {
         totalPages: Math.ceil(count / pageLimit),
         currentPage: page,
+        previousPage: page - 1 > 0 ? page - 1 : null,
       }
     });
 
