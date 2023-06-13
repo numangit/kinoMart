@@ -10,7 +10,12 @@ const getUsers = async (req, res, next) => {
     const searchRegexp = new RegExp(".*" + searchKeyword + ".*", 'i'); //before or after search word doesn't matter and i is for case insensitive
 
     const filterQuery = {
-      isAdmin: { $ne: true } //not admin
+      isAdmin: { $ne: true }, //not admin
+      $or: [ //filter by searched name, email or phone
+        { name: { $regex: searchRegexp } },
+        { email: { $regex: searchRegexp } },
+        { phone: { $regex: searchRegexp } },
+      ]
     };
 
     const users = await User.find(filterQuery);
