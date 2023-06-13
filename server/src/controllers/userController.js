@@ -34,7 +34,11 @@ const getUsers = async (req, res, next) => {
     res.status(200).send({
       message: "Users data has been sent",
       users,
+      pagination: {
+        totalPages: Math.ceil(count / pageLimit),
+      }
     });
+
   } catch (error) {
     next(error);
   };
