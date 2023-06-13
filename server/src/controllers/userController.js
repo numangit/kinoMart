@@ -6,6 +6,8 @@ const User = require('../models/userModel');
 //get all users control
 const getUsers = async (req, res, next) => {
   try {
+    const searchQuery = req.query.search || ""; //search query
+
     const users = await User.find();
     res.status(200).send({
       message: "Users data has been sent",
