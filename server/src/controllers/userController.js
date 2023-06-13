@@ -7,9 +7,10 @@ const User = require('../models/userModel');
 const getUsers = async (req, res, next) => {
   try {
     const searchKeyword = req.query.search || "";
+    const searchRegexp = new RegExp(".*" + searchKeyword + ".*", 'i'); //before or after search word doesn't matter and i is for case insensitive
 
     const filterQuery = {
-      isAdmin: { $ne: true }
+      isAdmin: { $ne: true } //not admin
     };
 
     const users = await User.find(filterQuery);
