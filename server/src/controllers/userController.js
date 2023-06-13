@@ -22,15 +22,19 @@ const getUsers = async (req, res, next) => {
     };
     const options = { password: 0 }; //exclude password field from users results
 
-    const users = await User.find(filterQuery, options).limit(pageLimit)
+    const users = await User.find(filterQuery, options)
+      .limit(pageLimit)
       .skip((page - 1) * pageLimit); //understand the pagination
+
+    const count = await User.find(filterQuery).countDocuments(); //count of searched results
+
     res.status(200).send({
       message: "Users data has been sent",
       users,
     });
   } catch (error) {
     next(error);
-  }
+  };
 };
 
 module.exports = { getUsers };
