@@ -11,7 +11,7 @@ Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/)
 * Model-View-Controller (MVC) Architecture
 * Schema and Models
 * Schema Validation, password encryption
-* Seeding API for testing
+* Seeding API (for testing and initial data inserting)
 
 ## Packages used in the server
 
