@@ -1,19 +1,19 @@
 const { Schema, model } = require('mongoose');
 const { defaultUserImagePath } = require('../secret');
-const bcrypt = required('bcrypt');
+const bcrypt = require('bcrypt');
 
 // NOTE: check mongoose doc if you don't understand the properties
 
 const userSchema = new Schema({
   name: {
-    type: string,
+    type: String,
     required: [true, 'User name is required'],
     trim: true,
     minlength: [2, 'User name must be minimum 2 characters'],
     maxlength: [50, 'User name must be maximum 50 characters']
   },
   email: {
-    type: string,
+    type: String,
     required: [true, 'User email is required'],
     trim: true,
     unique: true,//to avoid same email being used
@@ -26,29 +26,29 @@ const userSchema = new Schema({
     }
   },
   password: {
-    type: string,
+    type: String,
     required: [true, 'user password is required'],
     minlength: [6, 'password must be at least 6 characters'],
     set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)) //bcrypt function to encrypt password
   },
   image: {
-    type: string,
+    type: String,
     default: defaultUserImagePath
   },
   address: {
-    type: string,
+    type: String,
     required: [true, 'user address is required']
   },
   phone: {
-    type: string,
+    type: String,
     required: [true, 'user phone number is required']
   },
   isAdmin: {
-    type: boolean,
+    type: Boolean,
     default: false
   },
   isBanned: {
-    type: boolean,
+    type: Boolean,
     default: false
   }
 }, { timestamps: true }); //timestamp tells us when a data is created and updated
