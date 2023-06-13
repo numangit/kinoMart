@@ -18,7 +18,7 @@ const getUsers = async (req, res, next) => {
         { phone: { $regex: searchRegexp } },
       ]
     };
-    const options = { password: 0 }; //to exclude the password field from results
+    const options = { password: 0 }; //to exclude the password field from users results
 
     const users = await User.find(filterQuery, options);
     res.status(200).send({
