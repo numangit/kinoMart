@@ -6,6 +6,8 @@ const User = require('../models/userModel');
 //get all users control
 const getUsers = async (req, res, next) => {
   try {
+    const page = Number(req.query.page) || 1;//page number for pagination
+    const pageLimit = Number(req.query.limit) || 10; //data per page limit
     const searchKeyword = req.query.search || "";
     const searchRegexp = new RegExp(".*" + searchKeyword + ".*", 'i'); //before or after search word doesn't matter and i is for case insensitive
 
