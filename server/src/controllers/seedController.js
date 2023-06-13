@@ -10,6 +10,9 @@ const seedUser = async (req, res, next) => {
     //inserting new users
     const users = await User.insertMany(data.users);
 
+    //successful response with status and data in json format
+    res.status(201).json(users);
+
   } catch (error) {
     next(error);
   };
