@@ -28,6 +28,9 @@ const getUsers = async (req, res, next) => {
 
     const count = await User.find(filterQuery).countDocuments(); //count of searched results
 
+    //throw error if no result found
+    if (!users) throw createErrors(404, 'no users found');
+
     res.status(200).send({
       message: "Users data has been sent",
       users,
