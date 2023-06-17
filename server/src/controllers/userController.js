@@ -1,6 +1,7 @@
 const createErrors = require('http-errors');
 const User = require('../models/userModel');
 const { successResponse } = require('./responseController');
+const { Mongoose, default: mongoose } = require('mongoose');
 
 //endpoint logics/controls here
 
@@ -68,6 +69,11 @@ const getUser = async (req, res, next) => {
     });
 
   } catch (error) {
+    //handling error from mongoose
+    if (error instanceof mongoose.Error) {
+      next(createErrors(400, 'Invalid user ID'));
+    };
+
     next(error);
   };
 };
