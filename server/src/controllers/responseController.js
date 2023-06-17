@@ -14,7 +14,7 @@ const errorResponse = (res,
 const successResponse = (res,
   { statusCode = 200, message = "Success", payload = {} }) => {
   return res.status(statusCode).json({
-    statusCode: 200,
+    success: true,
     message,
     payload,
   });
