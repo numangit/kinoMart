@@ -1,5 +1,5 @@
-# Kinomart Server
-Kinomart is a full-stack E-commerce website.
+# KinoMart Server
+KinoMart is a full-stack E-commerce website.
 <!-- 
 ## Live Server link
 Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/) -->
