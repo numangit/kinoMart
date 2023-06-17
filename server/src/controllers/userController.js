@@ -69,7 +69,7 @@ const getUser = async (req, res, next) => {
     });
 
   } catch (error) {
-    //handling error from mongoose
+    //handling error from mongoose when an id is invalid
     if (error instanceof mongoose.Error) {
       next(createErrors(400, 'Invalid user ID'));
     };
