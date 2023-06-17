@@ -54,7 +54,15 @@ const getUsers = async (req, res, next) => {
 //get user by id
 const getUser = async (req, res, next) => {
   try {
+    const id = req.params.id;
+    const options = { password: 0 }; //exclude password field from users results
+    const user = await User.findById(id, options)
 
+    return successResponse(res, {
+      statusCode: 200,
+      message: "user returned",
+      payload: user
+    });
   } catch (error) {
     next(error);
   };
