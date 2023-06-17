@@ -12,7 +12,8 @@ Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/) -->
 * Schema and Models
 * Schema Validation, password encryption
 * Seeding API (for testing and initial data inserting)
-* pagination & search functionality
+* Pagination & search functionality
+* Modularized functions for error and success response
 
 ## Packages used in the server
 
