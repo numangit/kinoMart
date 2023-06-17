@@ -1,9 +1,11 @@
+/*
+  This file includes Endpoint logics/controls here
+*/
+
 const createErrors = require('http-errors');
 const User = require('../models/userModel');
 const { successResponse } = require('./responseController');
 const { Mongoose, default: mongoose } = require('mongoose');
-
-//endpoint logics/controls here
 
 //get all users control
 const getUsers = async (req, res, next) => {
