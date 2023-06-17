@@ -64,7 +64,7 @@ const getUser = async (req, res, next) => {
     return successResponse(res, {
       statusCode: 200,
       message: "user returned",
-      payload: user
+      payload: { user }
     });
 
   } catch (error) {
