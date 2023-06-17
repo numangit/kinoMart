@@ -1,5 +1,6 @@
 const createErrors = require('http-errors');
 const User = require('../models/userModel');
+const { successResponse } = require('./responseController');
 
 //endpoint logics/controls here
 
@@ -31,14 +32,17 @@ const getUsers = async (req, res, next) => {
     //throw error if no result found
     if (!users) throw createErrors(404, 'no users found');
 
-    res.status(200).send({
-      message: "Users data has been sent",
-      users,
-      pagination: {
-        totalPages: Math.ceil(count / pageLimit),
-        currentPage: page,
-        previousPage: page - 1 > 0 ? page - 1 : null,
-        nextPage: page + 1 <= Math.ceil(count / pageLimit) ? page + 1 : null
+    return successResponse(res, {
+      statusCode: 200,
+      message: "users were returned",
+      payload: {
+        users,
+        pagination: {
+          totalPages: Math.ceil(count / pageLimit),
+          currentPage: page,
+          previousPage: page - 1 > 0 ? page - 1 : null,
+          nextPage: page + 1 <= Math.ceil(count / pageLimit) ? page + 1 : null
+        }
       }
     });
 
