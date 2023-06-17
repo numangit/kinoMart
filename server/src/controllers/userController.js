@@ -58,11 +58,15 @@ const getUser = async (req, res, next) => {
     const options = { password: 0 }; //exclude password field from users results
     const user = await User.findById(id, options)
 
+    //throw error if no result found
+    if (!user) throw createErrors(404, 'no user found');
+
     return successResponse(res, {
       statusCode: 200,
       message: "user returned",
       payload: user
     });
+
   } catch (error) {
     next(error);
   };
