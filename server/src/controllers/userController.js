@@ -52,5 +52,12 @@ const getUsers = async (req, res, next) => {
 };
 
 //get user by id
+const getUser = async (req, res, next) => {
+  try {
 
-module.exports = { getUsers };
+  } catch (error) {
+    next(error);
+  };
+};
+
+module.exports = { getUsers, getUser };
