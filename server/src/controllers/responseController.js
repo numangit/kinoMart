@@ -1,5 +1,7 @@
-//This file is for generic functions for error response and success response
-//we used '=' instead of ':' in the object to set default values.
+/*
+- This file is for generic functions for error response and success response
+- we used '=' instead of ':' in the object to set default values.
+*/
 
 const errorResponse = (res,
   { statusCode = 500, message = "Internal Server Error" }) => {
