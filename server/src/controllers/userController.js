@@ -59,7 +59,7 @@ const getUser = async (req, res, next) => {
     const user = await User.findById(id, options)
 
     //throw error if no result found
-    if (!user) throw createErrors(404, 'no user found');
+    if (!user) throw createErrors(404, 'no user found with this id');
 
     return successResponse(res, {
       statusCode: 200,
