@@ -14,6 +14,7 @@ Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/) -->
 * Seeding API (for testing and initial data inserting)
 * Pagination & search functionality
 * Response controller for error and success
+* Services (to avoid code repetition)
 
 ## Packages used in the server
 
