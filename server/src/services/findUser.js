@@ -6,9 +6,8 @@ const createErrors = require("http-errors");
 const { default: mongoose } = require("mongoose");
 const User = require("../models/userModel");
 
-const findUserById = async (id) => {
+const findUserById = async (id, options = {}) => {
   try {
-    const options = { password: 0 }; //exclude password field from users results
     const user = await User.findById(id, options);
 
     //throw error if no result found
