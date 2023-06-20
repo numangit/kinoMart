@@ -8,14 +8,14 @@ const createErrors = require("http-errors");
 const { default: mongoose } = require("mongoose");
 const User = require("../models/userModel");
 
-const findUserById = async (id, options = {}) => {
+const findItemById = async (id, options = {}) => {
   try {
-    const user = await User.findById(id, options);
+    const result = await User.findById(id, options);
 
     //throw error if no result found
-    if (!user) throw createErrors(404, 'no user found with this id');
+    if (!result) throw createErrors(404, 'no result found with this id');
 
-    return user;
+    return result;
 
   } catch (error) {
     //handling error from mongoose when an id is invalid
@@ -26,4 +26,4 @@ const findUserById = async (id, options = {}) => {
   };
 };
 
-module.exports = { findUserById };
+module.exports = { findItemById };

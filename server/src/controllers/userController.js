@@ -5,7 +5,7 @@
 const createErrors = require('http-errors');
 const User = require('../models/userModel');
 const { successResponse } = require('./responseController');
-const { findUserById } = require('../services/findUser');
+const { getById } = require('../services/findItem');
 
 //get all users control
 const getUsers = async (req, res, next) => {
