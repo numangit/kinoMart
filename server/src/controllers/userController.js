@@ -5,7 +5,6 @@
 const createErrors = require('http-errors');
 const User = require('../models/userModel');
 const { successResponse } = require('./responseController');
-const { Mongoose, default: mongoose } = require('mongoose');
 const { findUserById } = require('../services/findUser');
 
 //get all users control
