@@ -5,7 +5,7 @@
 const createErrors = require('http-errors');
 const User = require('../models/userModel');
 const { successResponse } = require('./responseController');
-const { getById } = require('../services/findItem');
+const { findItemById } = require('../services/findItem');
 
 //get all users control
 const getUsers = async (req, res, next) => {
@@ -59,7 +59,7 @@ const getUser = async (req, res, next) => {
   try {
     const id = req.params.id;
     const options = { password: 0 }; //exclude password field from users results
-    const user = await findUserById(id, options);
+    const user = await findItemById(id, options);
 
     return successResponse(res, {
       statusCode: 200,
