@@ -1,5 +1,5 @@
 /*
-  * This file contains reuseable code for finding something by its id(eg: user,item, category)
+  * This file contains reuseable code for finding an item by its id(eg: user,item, category)
   * PURPOSE: to maintain DRY code
   * (This step may be skipped and code can be written directly in the controller)
 */
