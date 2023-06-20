@@ -59,9 +59,6 @@ const getUser = async (req, res, next) => {
   try {
     const id = req.params.id;
 
-    //throw error if no result found
-    if (!user) throw createErrors(404, 'no user found with this id');
-
     return successResponse(res, {
       statusCode: 200,
       message: "user returned",
