@@ -1,5 +1,5 @@
 /*
-  This file contains reuseable code for finding user
+  This file contains reuseable code for finding user to maintain DRY method. (This step may be skipped and code can be written directly in the controller)
 */
 
 const User = require("../models/userModel");
