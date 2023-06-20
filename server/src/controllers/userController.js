@@ -6,6 +6,7 @@ const createErrors = require('http-errors');
 const User = require('../models/userModel');
 const { successResponse } = require('./responseController');
 const { Mongoose, default: mongoose } = require('mongoose');
+const { findUserById } = require('../services/findUser');
 
 //get all users control
 const getUsers = async (req, res, next) => {
@@ -58,6 +59,7 @@ const getUsers = async (req, res, next) => {
 const getUser = async (req, res, next) => {
   try {
     const id = req.params.id;
+    findUserById(id);
 
     return successResponse(res, {
       statusCode: 200,

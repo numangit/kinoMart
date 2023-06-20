@@ -12,3 +12,5 @@ const findUserById = async (id) => {
   //throw error if no result found
   if (!user) throw createErrors(404, 'no user found with this id');
 };
+
+module.exports = { findUserById };
