@@ -1,5 +1,7 @@
 /*
-  This file contains reuseable code for finding user to maintain DRY method. (This step may be skipped and code can be written directly in the controller)
+  * This file contains reuseable code for finding something by its id(eg: user,item, category)
+  * PURPOSE: to maintain DRY code
+  * (This step may be skipped and code can be written directly in the controller)
 */
 
 const createErrors = require("http-errors");
