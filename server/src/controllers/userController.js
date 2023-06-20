@@ -55,7 +55,7 @@ const getUsers = async (req, res, next) => {
 };
 
 //get user by id
-const getUser = async (req, res, next) => {
+const getUserById = async (req, res, next) => {
   try {
     const id = req.params.id;
     const options = { password: 0 }; //exclude password field from users results
@@ -72,4 +72,4 @@ const getUser = async (req, res, next) => {
   };
 };
 
-module.exports = { getUsers, getUser };
+module.exports = { getUsers, getUserById };
