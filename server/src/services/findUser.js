@@ -1,3 +1,6 @@
+/*
+  This file contains reuseable code for finding user
+*/
 
 const findUserById = async (id) => {
   const options = { password: 0 }; //exclude password field from users results
