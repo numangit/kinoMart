@@ -6,14 +6,13 @@
 
 const createErrors = require("http-errors");
 const { default: mongoose } = require("mongoose");
-const User = require("../models/userModel");
 
-const findItemById = async (id, options = {}) => {
+const findItemById = async (Model, id, options = {}) => {
   try {
-    const result = await User.findById(id, options);
+    const result = await Model.findById(id, options);
 
     //throw error if no result found
-    if (!result) throw createErrors(404, 'no result found with this id');
+    if (!result) throw createErrors(404, `${Model.modelName} not found with this id`);
 
     return result;
 
