@@ -15,6 +15,7 @@ Hosted on Firebase -> [Click here](https://woodpecker-12.web.app/) -->
 * Pagination & search functionality
 * Response controller for error and success
 * Services (to avoid code repetition)
+* CRUD operations
 
 ## Packages used in the server
 
