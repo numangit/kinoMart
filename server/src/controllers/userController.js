@@ -97,7 +97,7 @@ const deleteUserById = async (req, res, next) => {
     //delete user from db
     await User.deleteOne({ _id: id, isAdmin: false });
 
-    return ({
+    return successResponse(res, {
       success: true,
       message: "User deleted successfully"
     });
