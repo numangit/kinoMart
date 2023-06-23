@@ -72,4 +72,8 @@ const getUserById = async (req, res, next) => {
   };
 };
 
-module.exports = { getUsers, getUserById };
+const deleteUserById = async (req, res, next) => {
+
+};
+
+module.exports = { getUsers, getUserById, deleteUserById };
