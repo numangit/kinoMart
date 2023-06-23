@@ -6,6 +6,7 @@ const createErrors = require('http-errors');
 const User = require('../models/userModel');
 const { successResponse } = require('./responseController');
 const { findItemById } = require('../services/findItem');
+const fs = require('fs'); //built-in Node.js file system module helps us store, access, and manage data on our operating/file system.
 
 //get all users control
 const getUsers = async (req, res, next) => {
@@ -75,6 +76,9 @@ const getUserById = async (req, res, next) => {
 //delete user by id
 const deleteUserById = async (req, res, next) => {
   try {
+    const id = req.params.id;
+    const options = { password: 0 };
+    const user = await findItemById(User, id, options);//to check if user exist
 
   } catch (error) {
     next(error);
