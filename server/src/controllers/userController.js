@@ -72,8 +72,13 @@ const getUserById = async (req, res, next) => {
   };
 };
 
+//delete user by id
 const deleteUserById = async (req, res, next) => {
+  try {
 
+  } catch (error) {
+
+  }
 };
 
 module.exports = { getUsers, getUserById, deleteUserById };
