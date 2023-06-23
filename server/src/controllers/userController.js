@@ -80,6 +80,10 @@ const deleteUserById = async (req, res, next) => {
     const options = { password: 0 };
     const user = await findItemById(User, id, options);//to check if user exist
 
+    return ({
+      success: true,
+      message: "User deleted successfully"
+    });
   } catch (error) {
     next(error);
   }
