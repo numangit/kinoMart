@@ -80,6 +80,20 @@ const deleteUserById = async (req, res, next) => {
     const options = { password: 0 };
     const user = await findItemById(User, id, options);//to check if user exist
 
+    //delete user image (from local device I guess)
+    const userImagePath = user.image;
+    fs.access(userImagePath, (error) => {
+      if (error) {
+        console.error('user image does not exist');
+      } else {
+        //fs.unlink is used for deleting
+        fs.unlink(userImagePath, (error) => {
+          if (error) throw error;
+          console.log('User image deleted successfully');
+        });
+      };
+    });
+
     return ({
       success: true,
       message: "User deleted successfully"
